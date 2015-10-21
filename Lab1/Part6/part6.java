@@ -1,3 +1,6 @@
+/*
+Writing a Java program to detrmine the Armstrong numbers.
+*/
 public class part6{
 	
 	public static void main(String[] args){
@@ -6,7 +9,7 @@ public class part6{
 		
 		int counter=0;
 		for(int i=100; i<1000;i++){
-			dum i=i%100;
+			dum =i%100;
 			b=i/100;
 		
 			d=dum%10;

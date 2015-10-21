@@ -1,3 +1,5 @@
+/* Writing a Java program to read an integer number and find the sum of the digits of this number
+*/
 import java.util.Scanner;
 
 public class part5{
@@ -6,10 +8,10 @@ public class part5{
 		int b,c,d;		//nb=bcd
 		int dum;		//a dummy variable
 		Scanner input = new Scanner(System.in);
-		System.out.println("Please, enter an integer number: ");
+		System.out.print("Please, enter an integer number: ");
 		int i = input.nextInt();
 		
-		dum i=i%100;
+		dum =i%100;
 		b=i/100;
 		
 		d=dum%10;

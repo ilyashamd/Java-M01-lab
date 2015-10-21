@@ -1,3 +1,8 @@
+/*
+Writing a Java program that read an integer number and find whether it is odd or even.
+
+*/
+
 import java.util.Scanner;
 
 public class part4{
@@ -5,7 +10,7 @@ public class part4{
 	public static void main(String[] args){
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Please, enter an integer number: ");
+		System.out.print("Please, enter an integer number: ");
 		int i = input.nextInt();
 		
 		int d=i%2;
