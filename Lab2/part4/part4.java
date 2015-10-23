@@ -13,11 +13,12 @@ public class part4{
 		for(int i=0; i<d; i++){
 			array[i]=input.nextInt();
 		}
-		sortArray(array, d);
-		showArray(array,d);	
+		sortArray(array);
+		showArray(array);	
 	}
 	
-	static void showArray(int []_array, int n){
+	static void showArray(int []_array){
+		int n=_array.length;
 		System.out.print("[ ");
 		for(int i=0; i<n; i++){
 			System.out.print(_array[i]+"  ");
@@ -25,7 +26,8 @@ public class part4{
 		System.out.println("]");
 	}
 	
-	static void sortArray(int[]_array,int n){
+	static void sortArray(int[]_array){
+		int n=_array.length;
 		boolean flag=false;
 		while(!flag){
 			flag=true;
