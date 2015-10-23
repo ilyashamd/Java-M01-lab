@@ -16,8 +16,8 @@ public class part3{
 		System.out.print("Enter an integer to generate an array: ");
 		int d = input.nextInt();
 		int []array= new int [d];
-		makeArray(array,d);
-		showArray(array,d);
+		makeArray(array);
+		showArray(array);
 		
 		System.out.println("Enter a number to add two arrays: ");
 		d = input.nextInt();
@@ -25,13 +25,13 @@ public class part3{
 		int[] array2=new int [d];
 		int[] intArray=new int [2*d];
 		
-		makeArray(array1,d);
-		showArray(array1,d);
-		makeArray(array2,d);
-		showArray(array2,d);
+		makeArray(array1);
+		showArray(array1);
+		makeArray(array2);
+		showArray(array2);
 			
-		addArray(array1, array2, intArray, d);
-		showArray(intArray,2*d);
+		addArray(array1, array2, intArray);
+		showArray(intArray);
 		
 		System.out.println("Enter 3 numbers, n(the array size), N1 and N2 to generate an array: ");
 		d = input.nextInt();
@@ -39,19 +39,20 @@ public class part3{
 		int N2= input.nextInt();
 		
 		int [] intArray2=new int [d];
-		makeArray2(intArray2, d, N1 ,N2);
-		showArray(intArray2,d);
+		makeArray(intArray2, N1 ,N2);
+		showArray(intArray2);
 		
 	}
 	
-	static void makeArray (int []_array, int n){
-		
+	static void makeArray (int []_array){
+		int n=_array.length;
 		for(int i=0; i<n; i++){
 			_array[i]=(int) (Math.random()*10);
 		}
 	}
 	
-	static void showArray(int []_array, int n){
+	static void showArray(int []_array){
+		int n=_array.length;
 		System.out.print("[ ");
 		for(int i=0; i<n; i++){
 			System.out.print(_array[i]+"  ");
@@ -59,7 +60,8 @@ public class part3{
 		System.out.println("]");
 	}
 	
-	static void addArray(int []array1, int []array2, int[]arrayResult, int n){
+	static void addArray(int []array1, int []array2, int[]arrayResult){
+		int n=array1.length;		
 		int i;
 		for(i=0; i<n;i++){
 			arrayResult[i]=array1[i];
@@ -69,9 +71,10 @@ public class part3{
 		}
 	}
 	
-	static void makeArray2 (int []_array, int n, int N1, int N2){
+	static void makeArray (int []_array, int N1, int N2){
+		int n=_array.length;		
 		if(N1>N2){
-			for(int i=0; i<n; i++){
+		for(int i=0; i<n; i++){
 			_array[i]=(int) ((Math.random()*(N1-N2))+N2);
 			}
 		}
