@@ -19,7 +19,7 @@ public class part3{
 		makeArray(array);
 		showArray(array);
 		
-		System.out.println("Enter a number to add two arrays: ");
+		System.out.print("Enter a number to add two arrays: ");
 		d = input.nextInt();
 		int[] array1=new int [d];
 		int[] array2=new int [d];
@@ -33,7 +33,7 @@ public class part3{
 		addArray(array1, array2, intArray);
 		showArray(intArray);
 		
-		System.out.println("Enter 3 numbers, n(the array size), N1 and N2 to generate an array: ");
+		System.out.print("Enter 3 numbers, n(the array size), N1 and N2 to generate an array: ");
 		d = input.nextInt();
 		int N1= input.nextInt();
 		int N2= input.nextInt();
