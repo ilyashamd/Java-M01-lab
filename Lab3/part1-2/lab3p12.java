@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class lab3p12{
 	static Scanner input = new Scanner(System.in);
-	
+	static String dum;//dummy variable used to flush the consol buffer
+
 	public static void main(String[] args){
 		Television tv;
 		String brandName;
@@ -16,9 +17,9 @@ public class lab3p12{
 		size=input.nextInt();
 		tv=new Television(brandName, size);
 
-		run(tv);		
+		run(tv);
 	}
-	
+
 
 
 	public static void showStatus(Television tv){
@@ -58,6 +59,7 @@ public class lab3p12{
 
 	public static void run(Television tv){
 		print("Your TV is off would you like to turn it on? (Y/N): ");
+		dum=input.nextLine();
 		String power=input.nextLine();
 		if(power.equalsIgnoreCase("y")){
 			tv.togglePowerOnOff();
@@ -68,15 +70,16 @@ public class lab3p12{
 
 			power="";
 			println("\nWatching time exceeded 2 hours, turn your TV off (Y/N) :");
+			dum=input.nextLine();
 			power=input.nextLine();
 			if(power.equalsIgnoreCase("y")){
 				tv.togglePowerOnOff();
-				println("Bye!");
+				println("\nBye!\n");
 			}else{
-				println("OK, may be later!");
+				println("\nOK, may be later!\n");
 			}
-		}else println("OK, may be later!");
-		
+		}else println("\nOK, may be later!\n");
+
 
 
 	}
@@ -109,7 +112,7 @@ public class lab3p12{
 	public static void println(int i){
 		System.out.println(i);
 	}
-	
+
 	public static void println(boolean b){
 		System.out.println(b);
 	}
@@ -128,12 +131,12 @@ public class lab3p12{
 class Television{
 	String manufacturer; 	//the manufacturer name
 	int screenSize;			// screen size (inch)
-	boolean powerOn;		// 
+	boolean powerOn;		//
 	boolean muteOn;			//
 	int channel;			//
 	int volume;				//store the current volume
 	int backupVolume;		//used to store the previous volume when muteOn
-	
+
 	Television(String brand, int size){
 		manufacturer=brand;
 		screenSize=size;
@@ -142,16 +145,16 @@ class Television{
 		volume=20;
 		channel=2;
 	}
-	
+
 	public void setChannel(int station){
 		if(station<=500)
 			channel=station;
 	}
-	
+
 	public void togglePowerOnOff(){
 		this.powerOn=!this.powerOn;
 	}
-	
+
 	public void toggleMuteOnOff(){
 		muteOn=!muteOn;
 		if (muteOn){
@@ -161,31 +164,31 @@ class Television{
 			volume=backupVolume;
 		}
 	}
-	
+
 	public void increaseVolume(){
 		this.volume++;
 		if(this.volume>100)
 			volume=100;
 	}
-	
+
 	public void decreaseVolume(){
 		this.volume--;
 		if(this.volume<0)
 			this.volume=0;
 	}
-	
+
 	public int getChannel(){
 		return this.channel;
 	}
-	
+
 	public int getVolume(){
 		return this.volume;
 	}
-	
+
 	public String getManufacturer(){
 		return this.manufacturer;
 	}
-	
+
 	public int getScreenSize(){
 		return this.screenSize;
 	}
@@ -193,29 +196,8 @@ class Television{
 	public boolean getPowerOnOff(){
 		return powerOn;
 	}
-	
+
 	public boolean getMuteOnOff(){
 		return muteOn;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
