@@ -64,17 +64,17 @@ class QuadraticEquation{
   }
 
   public double getDiscriminant(){
-    return b*b-4*a*c ;
+    return (b*b-(4.0*a*c)) ;
   }
 
   public double getRoot1(){
     if (getDiscriminant()<0)
       return 0;
-    return (-b-Math.sqrt(getDiscriminant()))/2*a;
+    return (-b-Math.sqrt(getDiscriminant()))/(2.0*a);
   }
   public double getRoot2(){
     if (getDiscriminant()<0)
       return 0;
-    return (-b+Math.sqrt(getDiscriminant()))/2*a;
+    return (-b+Math.sqrt(getDiscriminant()))/(2.0*a);
   }
 }

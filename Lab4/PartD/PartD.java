@@ -5,18 +5,40 @@ public class PartD{
 
 	public static void main(String[] args){
     LinearEquation eq;
-
+    double a,b,c,d,e,f;
 		System.out.println("\nLinear Equations Demo");
     System.out.println("****************************\n");
 
+// first senario
+/*
     System.out.println("aX+bY=e \ncX+dY=f\n");
     System.out.print("Enter a, b, c, d, e, and f: ");
-    double a=input.nextDouble();
-    double b=input.nextDouble();
-    double c=input.nextDouble();
-    double d=input.nextDouble();
-    double e=input.nextDouble();
-    double f=input.nextDouble();
+    a=input.nextDouble();
+    b=input.nextDouble();
+    c=input.nextDouble();
+    d=input.nextDouble();
+    e=input.nextDouble();
+    f=input.nextDouble();
+*/
+
+// second senario
+    System.out.println("The two endpoints for the first line segment are (x1, y1) and (x2, y2)");
+    System.out.println("For the second line segment are (x3, y3) and (x4, y4)\n");
+    System.out.print("Enter x1, y1, x2, y2, x3, y3, x4, and y4 to displays the intersecting point: ");
+    double x1=input.nextDouble();
+    double y1=input.nextDouble();
+    double x2=input.nextDouble();
+    double y2=input.nextDouble();
+    double x3=input.nextDouble();
+    double y3=input.nextDouble();
+    double x4=input.nextDouble();
+    double y4=input.nextDouble();
+    a=(y2-y1)/(x2-x1);
+    b=-1;
+    c=(y4-y3)/(x4-x3);
+    d=-1;
+    e=a*x2-y2;
+    f=c*x4-y4;
 
     eq=new LinearEquation(a,b,c,d,e,f);
     if (eq.isSolvable()){
@@ -91,7 +113,7 @@ class LinearEquation{
   }
 
   public boolean isSolvable(){
-    if (a*d==0 || c*d==0)
+    if ((a*d-b*c) == 0)
       return false;
     return true;
   }
