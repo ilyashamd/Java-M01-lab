@@ -1,7 +1,5 @@
-import java.util.Scanner;
-
 public class PartB{
-	static Scanner input = new Scanner(System.in);
+
 
 	public static void main(String[] args){
 		RegularPolygon p1=new RegularPolygon();
