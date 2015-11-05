@@ -105,7 +105,7 @@ class Complex{
 	}
 */
 	public static double mag (Complex c){
-		return c.x*c.x + c.y*c.y;
+		return Math.sqrt(c.x*c.x + c.y*c.y);
 	}
 	
 	public static double phase (Complex c){
