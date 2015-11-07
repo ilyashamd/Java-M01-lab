@@ -37,7 +37,10 @@ public class p2{
 		}
 		else if(choice==4){
 			Complex c=Complex.div(c1,c2);
-			print("Answer : "+c.x+" + j "+c.y+"\n");
+			if(c==null)
+				System.out.println("Error! You can't divide by zero");
+			else
+				print("Answer : "+c.x+" + j "+c.y+"\n");
 		}
 		else if(choice==5){
 			double d1=Complex.mag(c1);
@@ -93,10 +96,15 @@ class Complex{
 	}
 
 	public static Complex div (Complex c1, Complex c2){
-		Complex dum1= mult(c1, conj(c2));
-		Complex dum2= mult(c2, conj(c2));
+		if (c2.x == 0 || c2.y ==0 ){
+			return null;
+		}else {
+			Complex dum1= mult(c1, conj(c2));
+			Complex dum2= mult(c2, conj(c2));
 				
-		return new Complex(dum1.x/dum2.x, dum1.y/dum2.x);
+			return new Complex(dum1.x/dum2.x, dum1.y/dum2.x);
+		}
+		
 	}
 
 /*	public static void div (double i){
