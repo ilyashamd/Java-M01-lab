@@ -19,9 +19,31 @@ public class PartD{
     d=input.nextDouble();
     e=input.nextDouble();
     f=input.nextDouble();
-*/
 
-// second senario
+		eq=new LinearEquation(a,b,c,d,e,f);
+    if (eq.isSolvable()=="true"){
+			double dum = eq.getX();
+			if(dum*0 == 0){
+				if(dum ==0)
+					System.out.println("\nX= 0.0");
+				else
+					System.out.println("\nX= "+dum);
+			}
+	 		dum  = eq.getY();
+			if(dum*0 == 0){
+				if(dum ==0)
+					System.out.println("Y= 0.0");
+				else
+					System.out.println("Y= "+dum);
+				}
+		}
+		else if (eq.isSolvable()=="infinity")
+			System.out.println("\nThere are infinity of solutions");
+		else
+			System.out.println("\nThe equation has no solution");
+//end s1
+*/
+//	  second senario
     System.out.println("The two endpoints for the first line segment are (x1, y1) and (x2, y2)");
     System.out.println("For the second line segment are (x3, y3) and (x4, y4)\n");
     System.out.print("Enter x1, y1, x2, y2, x3, y3, x4, and y4 to displays the intersecting point: ");
@@ -41,13 +63,33 @@ public class PartD{
     f=c*x4-y4;
 
     eq=new LinearEquation(a,b,c,d,e,f);
-    if (eq.isSolvable()){
-      System.out.println("\nX= "+eq.getX());
-      System.out.println("Y= "+eq.getY());
-    }
-    else{
-      System.out.println("\nThe equation has no solution");
-    }
+		if (eq.isSolvable()=="true"){
+			double dum = eq.getX();
+			if(dum*0 == 0){
+				if(dum ==0)
+					System.out.println("\nX= 0.0");
+				else
+					System.out.println("\nX= "+dum);
+				}
+			else
+				System.out.println("error");
+
+	 		dum  = eq.getY();
+			if(dum*0 == 0){
+				if(dum ==0)
+					System.out.println("Y= 0.0");
+				else
+					System.out.println("Y= "+dum);
+				}
+				else
+					System.out.println("error");
+		}
+		else if (eq.isSolvable()=="infinity")
+			System.out.println("\nThere are infinity of solutions");
+		else
+			System.out.println("\nThe equation has no solution");
+
+// end s2
 
 	}
 
@@ -112,17 +154,21 @@ class LinearEquation{
     this.f=f;
   }
 
-  public boolean isSolvable(){
-    if ((a*d-b*c) == 0)
-      return false;
-    return true;
+  public String isSolvable(){
+		if((c/a)==(d/b) || (a/c) ==(b/d))
+			if (f==0 && e==0)
+			return "infinity";
+		else if ((a*d-b*c) == 0)
+      return "false";
+
+    return "true";
   }
 
   public double getX(){
-    return (f-d*e/b)/(c-a*d/b);
+			return (f-d*e/b)/(c-a*d/b) ;
   }
 
   public double getY(){
-    return (f-c*e/a)/(d-b*c/a);
+    return (f-c*e/a)/(d-b*c/a) ;
   }
 }
